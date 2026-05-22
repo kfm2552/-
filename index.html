@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pong Game</h1>
+        <div class="scoreboard">
+            <div class="score">
+                <span class="label">Player</span>
+                <span class="points" id="playerScore">0</span>
+            </div>
+            <div class="score">
+                <span class="label">Computer</span>
+                <span class="points" id="computerScore">0</span>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div id="gameCanvas"></div>
+            <svg id="pongGame" width="800" height="400" viewBox="0 0 800 400">
+                <!-- Center line -->
+                <line x1="400" y1="0" x2="400" y2="400" stroke="white" stroke-width="2" stroke-dasharray="10,10"/>
+                
+                <!-- Player paddle (left) -->
+                <rect id="playerPaddle" x="10" y="175" width="10" height="60" fill="white"/>
+                
+                <!-- Computer paddle (right) -->
+                <rect id="computerPaddle" x="780" y="175" width="10" height="60" fill="white"/>
+                
+                <!-- Ball -->
+                <circle id="ball" cx="400" cy="200" r="6" fill="white"/>
+            </svg>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>Controls:</strong></p>
+            <p>Move Mouse Up/Down OR Use Arrow Keys ↑↓ to control your paddle</p>
+            <p>First to 11 points wins!</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
