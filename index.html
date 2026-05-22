@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Weather Dashboard</h1>
+            <p class="subtitle">Real-time weather forecasts powered by Open-Meteo</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Enter city name..." 
+                    class="search-input"
+                >
+                <button id="searchBtn" class="btn btn-search">Search</button>
+                <button id="locationBtn" class="btn btn-location">📍 Use My Location</button>
+            </div>
+            <div id="errorMessage" class="error-message hidden"></div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="spinner hidden"></div>
+
+        <!-- Current Weather -->
+        <section id="currentWeather" class="current-weather hidden">
+            <div class="weather-header">
+                <div class="location-info">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="date" class="date">Date</p>
+                </div>
+                <div class="temperature-display">
+                    <span id="weatherIcon" class="weather-emoji">🌡️</span>
+                    <span id="temperature" class="temperature">--°C</span>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-card">
+                    <span class="label">Condition</span>
+                    <span id="description" class="value">--</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Feels Like</span>
+                    <span id="feelsLike" class="value">--°C</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value">--%</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Wind Speed</span>
+                    <span id="windSpeed" class="value">-- km/h</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Pressure</span>
+                    <span id="pressure" class="value">-- mb</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Visibility</span>
+                    <span id="visibility" class="value">-- km</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hourly Forecast -->
+        <section id="hourlyForecast" class="forecast-section hidden">
+            <h2>📊 Hourly Forecast (Next 24 Hours)</h2>
+            <div id="hourlyContainer" class="forecast-grid"></div>
+        </section>
+
+        <!-- Daily Forecast -->
+        <section id="dailyForecast" class="forecast-section hidden">
+            <h2>📅 7-Day Forecast</h2>
+            <div id="dailyContainer" class="forecast-grid"></div>
+        </section>
+
+        <!-- Recent Searches -->
+        <section id="recentSearches" class="recent-searches hidden">
+            <h2>🔍 Recent Searches</h2>
+            <div id="searchHistory" class="search-history"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Data provided by <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a> • Free & Open Weather API</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
